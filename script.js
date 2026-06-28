@@ -23,8 +23,8 @@ let projetos = [
 
 //Evento para a seta no começo do site rolar a tela
 const seta = document.getElementById('Expand_Arrow_24');
-const header = document.querySelector('header')
-const sobremim = document.getElementById('sobremim')
+const header = document.querySelector('header');
+const sobremim = document.getElementById('sobremim');
 
 seta.addEventListener('click', e => {
     formacao.scrollIntoView({
@@ -131,17 +131,21 @@ formulario.children[5].addEventListener('click', e => {
 
     if(nome.trim() === "" || email.trim() === "" || assunto.trim() === "" || mensagem.trim() === ""){
         notificacao.children[0].children[0].innerText = "Todos os campos devem ser preenchidos";
-        notificacao.style.display = 'flex'
+        notificacao.style.display = 'flex';
 
     } else if(formulario.children[2].checkValidity() === false){
         notificacao.children[0].children[0].innerText = "E-mail inválido";
-        notificacao.style.display = 'flex'
+        notificacao.style.display = 'flex';
     } else{
         notificacao.children[0].children[0].innerText = "Mensagem enviada, aguarde o contato pelo E-mail";
-        notificacao.style.display = 'flex'
+        formulario.children[1].value = "";
+        formulario.children[2].value = "";
+        formulario.children[3].value = "";
+        formulario.children[4].value = "";
+        notificacao.style.display = 'flex';
     }
 })
 
 notificacao.children[0].children[1].addEventListener('click', e => {
-    notificacao.style.display = 'none'
+    notificacao.style.display = 'none';
 })

@@ -27,6 +27,8 @@ html, body {
   }
 }
 
+/* --------CABEÇALHO---------- */
+
 @media (width > 768px) {
     header {
         display: grid;
@@ -60,34 +62,37 @@ html, body {
     display: grid;
     grid-template-rows: 85dvh 15dvh;
     grid-template-columns: 1fr;
+    justify-content: center;
 
+    background: linear-gradient(to bottom, #831A17, #000);
+    
     width: 100vw;
     height: 100dvh;
-    background: linear-gradient(to bottom, #831A17, #000);
-    justify-content: center;
 }
 
 #inicio span{
-    width: min-content;
-    height: min-content;
-    font-size: 19vh;
-    white-space: nowrap;
-    vertical-align: middle;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    text-align: center;
     justify-self: center;
+    white-space: nowrap;
+    text-orientation: upright;
+    writing-mode: vertical-rl;
+    vertical-align: middle;
+
+    text-align: center;
+    font-size: 19vh;
     font-family: 'Kaitou'; 
     color: #F5F5F5;
+    
+    height: min-content;
+    width: min-content;
 }
 
 #inicio svg {
+    color: white;
+    
+    align-self: center;
+    justify-self: center;
     height: 10vh;
     aspect-ratio: 1 / 1 ;
-
-    color: white;
-    justify-self: center;
-    align-self: center;
 }
 
 #inicio svg:hover {
@@ -101,20 +106,23 @@ html, body {
     flex-direction: column;
     justify-content: center;
     
-    width: 100vw;
-    height: fit-content;
     background-color: #000;
     padding-top: 5vh;
     padding-bottom: 5vh;
+    
+    height: fit-content;
+    width: 100vw;
 }
 
 #formacao > h1 {
-    width: 80vw;
     align-self: center;
     margin-bottom: 5vh;
+
     font-size: min(6vw, 26pt);
     font-family: 'JetBrains';
     color: #F5F5F5;
+    
+    width: 80vw;
 }
 
 .formacao-container {
@@ -128,15 +136,18 @@ html, body {
 }
 
 .formacao-container img {
-    height: 10vh;
-    border-radius: 10%;
-    margin-bottom: 3vh;
     justify-self: center;
+    margin-bottom: 3vh;
+    
+    border-radius: 10%;
+
+    height: 10vh;
     aspect-ratio: 1 / 1;
 }
 
 .formacao-container h1 {
     justify-self: center;
+
     font-size: min(6vw, 26pt);
     font-family: 'JetBrains';
     color: #F5F5F5;
@@ -147,12 +158,13 @@ html, body {
 }
 
 .formacao-container span{
+    justify-self: center;
+
     font-size: min(4.7vw, 22pt);
     font-family: 'JetBrains';
     color: #F5F5F5;
 
     width: min(80%, 500px);
-    justify-self: center;
 }
 
 .end h1, .end span {
@@ -162,13 +174,14 @@ html, body {
 /* --------PROJETOS---------- */
 
 #projetos {
-    scroll-margin-top: 4vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     
-    padding-bottom: 10vh;
+    scroll-margin-top: 4vh;
     background-color: #000;
+    
+    padding-bottom: 10vh;
     width: 100vw;
 }
 
@@ -187,10 +200,11 @@ html, body {
     font-family: 'JetBrains';
     color: #F5F5F5;
 
-    width: 80vw;
-    margin-bottom: 2vh;
     transition: transform 0.2s ease-in-out;
     transform-origin: left top;
+    
+    margin-bottom: 2vh;
+    width: 80vw;
 }
 
 #projetos a:hover{
@@ -201,25 +215,27 @@ html, body {
 /* --------SOBRE MIM---------- */
 
 #sobremim {
-    scroll-margin-top: 4vh;
     display: grid;
-    width: 100vw;
-    padding-bottom: 15dvh;
     grid-template-rows: fit-content;
+    
+    scroll-margin-top: 4vh;
     background-color: #000;
+
+    padding-bottom: 15dvh;
+    width: 100vw;
 }
 
 #sobremim div {
     display: grid;
     height: max-content;
-    
 }
 
 #sobremim img{
     justify-self: center;
+    border-radius: 20px;
+
     width: min(70vw, 500px);
     aspect-ratio: 3 / 2;
-    border-radius: 20px;
 }
 
 #sobremim div > :first-child {
@@ -232,87 +248,96 @@ html, body {
 }
 
 #sobremim h1{
-    font-size: min(6vw, 37pt);
     text-align: center;
+    justify-self: center;
+
     font-family: 'JetBrains';
+    font-size: min(6vw, 37pt);
     color: #F5F5F5;
 
-    width: 80vw;
-    justify-self: center;
     margin-top: 2vh;
     margin-bottom: 2vh;
+    width: 80vw;
 }
 
 #sobremim span {
+    justify-self: center;
+    text-align: center;
+
     font-size: min(4.7vw, 22pt);
     font-family: 'JetBrains';
     color: #F5F5F5;
 
-    width: min(80vw, 700px);
-    text-align: center;
-    justify-self: center;
     margin-bottom: 15vh;
+    width: min(80vw, 700px);
 }
 
 /* --------CONTATO---------- */
 
 #contato {
-    scroll-margin-top: 4vh;
     display: grid;
-    padding-top: 5vh;
-    width: 100vw;
-    height: max-content;
     grid-template-rows: fit-content;
     align-items: center;
+
+    scroll-margin-top: 4vh;
     background: linear-gradient(to top, #831A17, #000);
+    padding-top: 5vh;
+
+    width: 100vw;
+    height: max-content;
 }
 
 #contato > :first-child {
     display: grid;
     grid-template-columns: fit-content;
-    
 }
 
 #contato > :first-child span{
-    color: white;
-    font-family: 'JetBrains';
-    width: min(80vw, 500px);
     justify-self: center;
+    
     font-size: min(7vw, 22pt);
+    font-family: 'JetBrains';
+    color: white;
+    
     margin-bottom: 3vh;
+    width: min(80vw, 500px);
 }
 
 #contato > :first-child input, 
 #contato > :first-child textarea{
-    font-size: 2.3vh;
+    justify-self: center;
     border: none;
+    
     border: solid 1px #ccc;
     border-radius: 15px;
-    padding-left: max(1vw, 10px);
+    font-size: 2.3vh;
     font-family: 'JetBrains';
-
+    
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     box-sizing: border-box;
+    
+    padding-left: max(1vw, 10px);
     margin-bottom: 2vh;
     width: min(80vw, 500px);
     height: 5vh;
-    justify-self: center;
 }
 
 #contato > :first-child :nth-child(5) {
     align-items: start;
+
     box-sizing: border-box;
+    user-select: none;
+    
     padding-top: 1vh;
     height: 20vh;
-    user-select: none;
 }
 
 #contato > :first-child :nth-child(6) {
-    background-color: #000;
-    color: #F5F5F5;
     text-align: start;
     border: none;
+    color: #F5F5F5;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #000;
 }
 
 #contato > :first-child :nth-child(6):hover {
@@ -327,80 +352,89 @@ html, body {
 }
 
 #contato > :nth-child(2) svg {
+    justify-self: end;
+    
+    color: white;
+
     height: 4vh;
     aspect-ratio: 1 / 1;
-    justify-self: end;
-    color: white;
 }
 
 #contato > :nth-child(2) a {
-    font-size: 3vh;
-    text-decoration: none;
     justify-self: start;
+    text-decoration: none;
+    
+    font-size: 3vh;
+    font-family: 'JetBrains';
+    color: white;
+    
     padding-left: 7px;
     margin-right: 5vw;
-    color: white;
-    font-family: 'JetBrains';
 }
 
 #contato > :nth-child(2) > :last-child {
-    margin-top: 0.5vh;
-    margin-bottom: 1vh;
-    font-size: 2.5vh;
-    margin-right: 3vw;
-    color: white;
-    font-family: 'JetBrains';
-    
     grid-column: span 2;
     justify-self: end;
+    
+    font-size: 2.5vh;
+    font-family: 'JetBrains';
+    color: white;
+    
+    margin-top: 0.5vh;
+    margin-right: 3vw;
+    margin-bottom: 3vh;
 }
 
 /* --------NOTIFICAÇÃO---------- */
 
 #notificacao {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    
     background-color: rgba(0, 0, 0, 0.295);
     z-index: 9999;
-
-    display: none;
-    align-items: center;
-    justify-content: center;
+    
+    height: 100vh;
+    width: 100vw;
 }
 
 #notificacao div {
     display: grid;
-    padding: 2vh;
     gap: 2vh;
 
-    
-    width: min(85vw, 500px);
-    height: max-content;
     background-color: white;
     border-radius: 5px;
-
+    
+    padding: 2vh;
+    width: min(85vw, 500px);
+    height: max-content;
 }
 
 #notificacao span {
-    font-family: 'JetBrains';
-    font-size: min(3vh, 22pt);
     justify-self: center;
     text-align: center;
+    font-family: 'JetBrains';
+    font-size: min(3vh, 22pt);
 }
 
 #notificacao button {
-    width: fit-content;
-    background-color: #831A17;
-    color: white;
-    font-size: min(4vh, 18pt);
-    border: 1px black;
-    font-family: 'JetBrains';
-    border-radius: 5px;
     justify-self: center;
+
+    font-size: min(4vh, 18pt);
+    font-family: 'JetBrains';
+    color: white;
+
     user-select: none;
+    border: 1px black;
+    background-color: #831A17;
+
+    border-radius: 5px;
+    width: fit-content;
 }
 
 #notificacao button:hover{
