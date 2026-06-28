@@ -1,7 +1,9 @@
 html, body {
     overflow-x: hidden;
+    background-color: #831A17;
 }
 
+/* --------IMPORT DAS FONTES---------- */
 @font-face {
     font-family: 'Kaitou';
     src: url('./fonts/kaitouyokokugothic-heavy-regular.ttf') format('truetype');
@@ -14,6 +16,42 @@ html, body {
     src: url('./fonts/JetBrainsMonoNLNerdFontMono-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+}
+
+@media (width <= 768px) {
+  header {
+    display: none;
+  }
+  #inicio span{
+    margin-top: 4vh;
+  }
+}
+
+@media (width > 768px) {
+    header {
+        display: grid;
+        grid-template-columns: min-content min-content min-content min-content min-content;
+        align-items: center;
+        justify-content: center;
+        gap: 7vw;
+        user-select: none;
+
+        font-family: 'JetBrains';
+        color: #F5F5F5;
+        background-color: #000;
+
+        position: fixed;
+        z-index: 2;
+        height: 3.5vh;
+        width: 100vw;
+  }
+
+  header span:hover{
+    cursor: pointer;
+  }
+  #inicio span{
+    margin-top: 10vh;
+  }
 }
 
 /* --------INICIO---------- */
@@ -30,7 +68,6 @@ html, body {
 }
 
 #inicio span{
-    margin-top: 6vh;
     width: min-content;
     height: min-content;
     font-size: 19vh;
@@ -53,6 +90,10 @@ html, body {
     align-self: center;
 }
 
+#inicio svg:hover {
+    cursor: pointer;
+}
+
 /* --------FORMAÇÃO---------- */
 
 #formacao {
@@ -65,6 +106,15 @@ html, body {
     background-color: #000;
     padding-top: 5vh;
     padding-bottom: 5vh;
+}
+
+#formacao > h1 {
+    width: 80vw;
+    align-self: center;
+    margin-bottom: 5vh;
+    font-size: min(6vw, 26pt);
+    font-family: 'JetBrains';
+    color: #F5F5F5;
 }
 
 .formacao-container {
@@ -112,6 +162,7 @@ html, body {
 /* --------PROJETOS---------- */
 
 #projetos {
+    scroll-margin-top: 4vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -135,7 +186,6 @@ html, body {
     font-size: min(5vw, 20pt);
     font-family: 'JetBrains';
     color: #F5F5F5;
-    text-decoration: none;
 
     width: 80vw;
     margin-bottom: 2vh;
@@ -151,10 +201,10 @@ html, body {
 /* --------SOBRE MIM---------- */
 
 #sobremim {
+    scroll-margin-top: 4vh;
     display: grid;
     width: 100vw;
-    padding-top: 10vh;
-    padding-bottom: 10vh;
+    padding-bottom: 15dvh;
     grid-template-rows: fit-content;
     background-color: #000;
 }
@@ -189,6 +239,7 @@ html, body {
 
     width: 80vw;
     justify-self: center;
+    margin-top: 2vh;
     margin-bottom: 2vh;
 }
 
@@ -200,24 +251,35 @@ html, body {
     width: min(80vw, 700px);
     text-align: center;
     justify-self: center;
+    margin-bottom: 15vh;
 }
 
 /* --------CONTATO---------- */
 
 #contato {
+    scroll-margin-top: 4vh;
     display: grid;
     padding-top: 5vh;
     width: 100vw;
     height: max-content;
     grid-template-rows: fit-content;
     align-items: center;
-    background-color: #000;
+    background: linear-gradient(to top, #831A17, #000);
 }
 
 #contato > :first-child {
     display: grid;
     grid-template-columns: fit-content;
     
+}
+
+#contato > :first-child span{
+    color: white;
+    font-family: 'JetBrains';
+    width: min(80vw, 500px);
+    justify-self: center;
+    font-size: min(7vw, 22pt);
+    margin-bottom: 3vh;
 }
 
 #contato > :first-child input, 
@@ -229,6 +291,7 @@ html, body {
     padding-left: max(1vw, 10px);
     font-family: 'JetBrains';
 
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     box-sizing: border-box;
     margin-bottom: 2vh;
     width: min(80vw, 500px);
@@ -241,6 +304,15 @@ html, body {
     box-sizing: border-box;
     padding-top: 1vh;
     height: 20vh;
+    user-select: none;
+}
+
+#contato > :first-child :nth-child(6) {
+    background-color: #000;
+    color: #F5F5F5;
+    text-align: start;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 #contato > :first-child :nth-child(6):hover {
@@ -261,8 +333,9 @@ html, body {
     color: white;
 }
 
-#contato > :nth-child(2) span {
+#contato > :nth-child(2) a {
     font-size: 3vh;
+    text-decoration: none;
     justify-self: start;
     padding-left: 7px;
     margin-right: 5vw;
@@ -274,9 +347,62 @@ html, body {
     margin-top: 0.5vh;
     margin-bottom: 1vh;
     font-size: 2.5vh;
+    margin-right: 3vw;
     color: white;
     font-family: 'JetBrains';
     
     grid-column: span 2;
     justify-self: end;
+}
+
+/* --------NOTIFICAÇÃO---------- */
+
+#notificacao {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.295);
+    z-index: 9999;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#notificacao div {
+    display: grid;
+    padding: 2vh;
+    gap: 2vh;
+
+    
+    width: min(85vw, 500px);
+    height: max-content;
+    background-color: white;
+    border-radius: 5px;
+
+}
+
+#notificacao span {
+    font-family: 'JetBrains';
+    font-size: min(3vh, 22pt);
+    justify-self: center;
+    text-align: center;
+}
+
+#notificacao button {
+    width: fit-content;
+    background-color: #831A17;
+    color: white;
+    font-size: min(4vh, 18pt);
+    border: 1px black;
+    font-family: 'JetBrains';
+    border-radius: 5px;
+    justify-self: center;
+    user-select: none;
+}
+
+#notificacao button:hover{
+    cursor: pointer;
 }
